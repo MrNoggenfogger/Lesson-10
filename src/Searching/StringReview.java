@@ -32,7 +32,7 @@ public class StringReview {
         System.out.println("Andy".compareTo("Bob"));
         System.out.print("Andy vs Bob\t");
         System.out.println("Andy".compareTo("Bob"));
-        
+        System.out.println("That's all folks");
         
     }
 
