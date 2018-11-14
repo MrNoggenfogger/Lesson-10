@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Searching;
+package Sorting;
 
 /**
  *
  * @author chri8160
  */
-public class ISSStudent implements Comparable{
+public class ISSStudent implements Comparable <ISSStudent>{
     private String name;
     private String address;
     private int id;
@@ -26,16 +26,13 @@ public class ISSStudent implements Comparable{
     public int getID(){
         return id;
     }
-    
     public String getName(){
         return name;
-    }
-    
+                }
     @Override
-    public int compareTo(Object o) {
-        if(this.id > ((ISSStudent)o).getID()) return 1;
-        else if (this.id < ((ISSStudent)o).getID()) return -1;
-        else return 0;
+    public int compareTo(ISSStudent o) {
+        //this version uses names
+        return name.compareTo(o.name);
     }
     
 }

@@ -27,8 +27,8 @@ public class StudentSearch extends javax.swing.JFrame {
                 nm = b.readLine();
                 ad = b.readLine();
                 id = Integer.parseInt(b.readLine());
-                //System.out.println(nm + "\t" + ad + "\t" + id);
-                //iss[i] = new Student(nm,ad,id);
+                System.out.println(nm + "\t" + ad + "\t" + id);
+                iss[i] = new ISSStudent(nm,ad,id);
             }
             b.close();
         } catch (Exception e) {
@@ -80,6 +80,11 @@ public class StudentSearch extends javax.swing.JFrame {
         });
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnclearActionPerformed(evt);
+            }
+        });
 
         txtout.setColumns(20);
         txtout.setRows(5);
@@ -144,6 +149,11 @@ public class StudentSearch extends javax.swing.JFrame {
     private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtidActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        txtid.setText("");
+        txtout.setText("");
+    }//GEN-LAST:event_btnclearActionPerformed
 
     /**
      * @param args the command line arguments
