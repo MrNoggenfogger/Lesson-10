@@ -23,6 +23,7 @@ public class FruitArrayList extends javax.swing.JFrame {
         //add fruits to list
         f.add("Apple");
         f.add("Banana");
+        f.add("Cherry");
         f.add("Papaya");
         f.add("Pear");
         f.add("Starfruit");
