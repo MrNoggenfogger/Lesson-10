@@ -26,6 +26,7 @@ public class FruitArrayList extends javax.swing.JFrame {
         f.add("Papaya");
         f.add("Pear");
         f.add("Starfruit");
+        f.add("Watermelon");
         //add fruits to list model
         for (String fruit : f) {
             list.addElement(fruit);
