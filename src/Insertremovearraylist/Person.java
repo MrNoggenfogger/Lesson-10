@@ -17,5 +17,19 @@ public class Person implements Comparable <Person>{
          return name.compareTo(t.getName());
          
     }
- 
+    
+    public void setAge(int a){
+        age = a;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+    
+    
 }
