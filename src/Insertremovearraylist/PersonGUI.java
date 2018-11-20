@@ -209,12 +209,15 @@ public class PersonGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        clearForm();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    public void clearForm(){
         txtname.setText("");
         txtage.setText("");
         buttonGroup1.clearSelection();
         lstpeople.clearSelection();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
+    }
+    
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -224,12 +227,15 @@ public class PersonGUI extends javax.swing.JFrame {
         int age = Integer.parseInt(txtage.getText());
         String sex = buttonGroup1.getSelection().getActionCommand();
         Person pp  = new Person(name,sex,age);
+        int InsertPoint = findInsertPoint(people, pp);
         if(search(people,pp)==-1){
-            
+            people.add(InsertPoint, pp);
+            list.add(InsertPoint, pp);
         }
         else{
             
         }
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -238,9 +244,10 @@ public class PersonGUI extends javax.swing.JFrame {
 
     private void lst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lst1ActionPerformed
        String name22 = lstpeople.getSelectedValue();
-       int pos =search(people,name22);
+       Person temp = new Person(name22,"", 0);
        list.removeElementAt(lstpeople.getSelectedIndex());
-       
+       people.remove(temp);
+       clearForm();
     }//GEN-LAST:event_lst1ActionPerformed
 
     /**
