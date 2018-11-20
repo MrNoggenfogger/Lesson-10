@@ -5,7 +5,7 @@ public class Person implements Comparable{
     private int age;
     private String gender;
     
-    public Person(String nm, int ag, String genderr){
+    public Person(String nm,String genderr, int ag){
         name = nm;
         age = ag;
         gender = genderr;

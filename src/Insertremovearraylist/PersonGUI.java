@@ -19,10 +19,10 @@ public class PersonGUI extends javax.swing.JFrame {
     DefaultListModel list = new DefaultListModel();
     public PersonGUI() {
         initComponents();
-        people.add(new Person("Bob", 25, "M"));
-        people.add(new Person("Fran", 55, "F"));
-        people.add(new Person("Mike", 15, "M"));
-        people.add(new Person("Sue", 30, "F"));
+        people.add(new Person("Bob", "M", 25));
+        people.add(new Person("Fran", "F", 55));
+        people.add(new Person("Mike", "M", 15));
+        people.add(new Person("Sue", "F", 30));
         lstpeople.setModel(list);
         for (Person p : people) {
             list.addElement(p.getName());
@@ -53,7 +53,7 @@ public class PersonGUI extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        lst1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -69,9 +69,16 @@ public class PersonGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Male");
+        jRadioButton1.setActionCommand("M");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Female");
+        jRadioButton2.setActionCommand("F");
 
         jMenu1.setText("File");
 
@@ -106,9 +113,14 @@ public class PersonGUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\delete.png")); // NOI18N
-        jMenuItem6.setText("Delete");
-        jMenu2.add(jMenuItem6);
+        lst1.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\delete.png")); // NOI18N
+        lst1.setText("Delete");
+        lst1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lst1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(lst1);
 
         jMenuBar1.add(jMenu2);
 
@@ -208,8 +220,28 @@ public class PersonGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
+        String name = txtname.getText();
+        int age = Integer.parseInt(txtage.getText());
+        String sex = buttonGroup1.getSelection().getActionCommand();
+        Person pp  = new Person(name,sex,age);
+        if(search(people,pp)==-1){
+            
+        }
+        else{
+            
+        }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void lst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lst1ActionPerformed
+       String name22 = lstpeople.getSelectedValue();
+       int pos =search(people,name22);
+       list.removeElementAt(lstpeople.getSelectedIndex());
+       
+    }//GEN-LAST:event_lst1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,7 +277,47 @@ public class PersonGUI extends javax.swing.JFrame {
             }
         });
     }
+    public static int search (ArrayList a, Object searchValue){
+	   int left = 0;
+	   int right = a.size()-1;
+	   while (left <= right){
+	      int midpoint = (left + right) / 2;
+	      int result = ((Comparable)a.get(midpoint)).compareTo(searchValue); 
+	      if (result == 0)
+	         return midpoint;
+	      else if (result < 0)
+	         left = midpoint + 1;
+	      else
+	         right = midpoint-1;
+	   }
+	   return -1;	
+		   
+}
 
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////
+	
+public static int findInsertPoint (ArrayList a, Object searchValue){
+	   int left = 0;
+	   int right = a.size()-1;
+	   int midpoint=0;
+	   
+	   while (left <= right){
+	      midpoint = (left + right) / 2;
+	   
+	      int result = ((Comparable)a.get(midpoint)).compareTo(searchValue); 
+	   
+	     if (result < 0)
+	         left = midpoint + 1;
+	      else
+	         right = midpoint-1;
+	   }
+	   if(((Comparable)a.get(midpoint)).compareTo(searchValue) < 0)
+	   midpoint++;
+	   return midpoint;	   
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
@@ -259,11 +331,11 @@ public class PersonGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem lst1;
     private javax.swing.JList<String> lstpeople;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtname;

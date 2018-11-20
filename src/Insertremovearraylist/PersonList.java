@@ -18,18 +18,18 @@ public class PersonList {
     
     public static void main(String[] args) {
         Person p[] = new Person[10];
-        p[0] = new Person("Andrews, Bob", 47);
-        p[1] = new Person("Davidson, Greg", 47);
-        p[2] = new Person("Folley, Anna", 47);
-        System.out.println("Adding nw person: Edwards, Dave");
-        Person x = new Person("Edwards, Dave",21);
+        p[0] = new Person("Andrews, Bob", "M",47);
+        p[1] = new Person("Davidson, Greg","M", 47);
+        p[2] = new Person("Folley, Anna","F", 47);
+        System.out.println("Adding new person: Edwards, Dave");
+        Person x = new Person("Edwards, Dave","M",21);
         int loc = findInsertPoint(p, x);
         insert(p,x,loc);
         for (int i = 0; i < logicalSize; i++) {
             System.out.println(p[i].getName());
         } 
         System.out.println("Remove Davidson, Greg");
-    Person temp = new Person("Davidson, Greg",0);
+    Person temp = new Person("Davidson, Greg","M",0);
     loc = search(p,temp);
     delete(p,loc);
     }

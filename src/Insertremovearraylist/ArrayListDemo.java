@@ -24,9 +24,9 @@ public class ArrayListDemo {
         x.add("Pear");
         x.add("Banana");
         
-        y.add(new Person("Smith. Joe", 45));
-        y.add(new Person("Andrews, Amy", 22));
-        y.add(new Person("Simpson, Homer", 48));
+        y.add(new Person("Smith. Joe","M", 45));
+        y.add(new Person("Andrews, Amy","F", 22));
+        y.add(new Person("Simpson, Homer","M", 48));
         
         for (int i = 0; i < x.size(); i++) {
             System.out.println(x.get(i));
@@ -42,7 +42,7 @@ public class ArrayListDemo {
         x.remove(1);
         
         System.out.println("Insert new Person between 1 and 2");
-        y.add(2,new Person("Gumball, Barney",32));
+        y.add(2,new Person("Gumball, Barney","M",32));
         
         for (int i = 0; i < x.size(); i++) {
             System.out.println(x.get(i));
