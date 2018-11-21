@@ -1,0 +1,129 @@
+Part A: Provide the correct word(s) that describes each concept using the list below 
+
+ 1. This is required when an object is a member of 2 classes, and needs to run an exclusive method from the lower class: Casting
+
+ 2. A method in a class with no code attached to it - it will be given code later by another class that extends this class: Abstract
+
+ 3. A way to declare a variable so it is only available in this class and classes below it in the hierarchy: Protected
+
+ 4. A method that can only be run through an existing object, it is called a ____ Method: Instance
+
+ 5. When a class automatically receives all the properties and abilities of a parent class, this concept is know as: Inheritance
+
+ 6. The key word used to call the constructor of a class that is one up in the hierarchy: Super
+
+ 7. A class tat extends another class is also referred to as a ____ class: Child
+
+ 8. The key word used to establish an "as-is" relationship, allowing a class to inherit things from another class: Extends
+
+ 9. A java file that simply gives a list of methods but has no code for the methods: Interface
+
+ 10. Providing more than one implementation of the same method in the same class: Overloading
+
+ 11. A class that cannot be instantiated: Abstract
+
+ 12. A class that CAN be instantiated: Concrete
+
+ 13. A method only found in a child class, its not something hat the parent needs (like setSpoke()): : Exclusive
+
+ 14. The ability of an object to take on multiple identities, or to change from one thing into many other things: Polymorphism
+
+ 15. A class level method, it can be run through the class itself: Static
+
+ 16. The key word used to connect a class to an interface: Implements
+
+ 17. A variable (like size), color) that is linked to an existing object, it is called a ____ variable: Instance
+
+ 18. A method in a class that cant be overridden by another class that extends it: Final
+
+ 19. Providing an implementation of a method in a lower class that is different from the one inherited from a higher class: 
+ 
+ 20: A class that is above another class in a hierarchy s also called a ___ class: 
+
+Part B: Sorting Algorithms
+
+ Bubble Sort
+  47  47  47  47  14  5
+  102 102 71  14  5   14
+  155 71  14  5   47  47
+  71  14  5   71  71  71
+  14  5   87  87  87  87
+  5   87  102 102 102 102
+  87  155 155 155 155 155
+ 
+ Exchange Sort
+  47  5   5   5   5  
+  102 102 14  14  14  
+  155 155 155 47  47  
+  71  71  71  71  71  
+  14  14  102 102 87  
+  5   47  47  155 102 
+  87  87  87  87  155
+
+ Insertion Sort
+  47  47  14  5   5
+  102 71  47  14  14
+  155 102 71  47  47
+  71  155 102 71  71
+  14  14  155 102 87
+  5   5   5   155 102
+  87  87  87  87  155
+
+Part C - Other Algorithms
+
+ 1. What is the difference between a binary search and a linear search?  In your 
+answer explain which one is better and what conditions must be true about the 
+data in order to search the "Better" way
+    Binary - starts searching in the middle, continually cuts the search range 
+in half until either the number is found or when left and right boundaries collide
+and returns -1
+    Linear - Starts at beginning and searches in sequence through list until item
+found.  If it reaches the bottom it returns -1
+    Binary is better since it finds things much faster, but the list must be
+sorted
+
+ 2. Given the following sorted list stored in a String array, describe the state of the
+list through ech change as it prepares to insert a new fruit "Orange" in alphabetical order
+ KIWI       KIWI       KIWI       KIWI
+ PINEAPPLE  PINEAPPLE  PINEAPPLE  ORANGE
+ STRAWBERRY STRAWBERRY PINEAPPLE  PINEAPPLE
+ __________ STRAWBERRY STRAWBERRY STRAWBERRY
+                                  logicalSize++;
+
+ KIWI       ORANGE     ORANGE     ORANGE
+ ORANGE     ORANGE     PINEAPPLE  PINEAPPLE
+ PINEAPPLE  PINEAPPLE  PINEAPPLE  STRAWBERRY
+ STRAWBERRY STRAWBERRY STRAWBERRY STRAWBERRY
+ __________ __________ __________ logicalSize--;
+
+Part D - Short Answer
+
+ 1. What do you add to a class declaration so it will be able to be sorted and searched within: Implements comparable
+
+ 2. What do you add to a class declaration so it will provide code for an interface: Implements (interface)
+
+ 3. What do you add to a class declaration so it will be a child of another class: Extends
+
+ 4. How do you declare a Shape to be a Wheel: Shape s = new Wheel();
+
+ 5. How do you set the spokes for that shape? ((Wheel)s).setSpokes();
+
+ 6. How do you call a parent constructor with no arguments: Super();
+
+ 7. How do you call the parent "draw" method from the child draw method: Super.draw();
+
+ 8. How do you declare a class constant called MIN_SIZE and set it to 10: Public static final int MIN_SIZE=10;
+
+ 9. How do you declare a property called xPOS that is available to child class as well: protected int xPOS;
+
+ 10. How do you copy the fruit in location 'x' to the location AFTER it (for inserting purposes: ) fruit[x+1] = fruit[x];
+
+ 11. How do you create an Array List called 'Fruits': ArrayList <String> Fruits = new ArrayList();
+
+ 12. How do you add a new Fruit to the List, assuming it is called 'x'? Fruit x = new Fruit("Apple");
+
+ 13. How do we remove the 44th item from Fruits: Fruits.remove(3);
+
+ 14. How do we replace the 7th item in Fruits with 'x' created n #12: Fruits.set(6,x);
+
+ 15. How do we find out how many items are in Fruit: Fruits.size();

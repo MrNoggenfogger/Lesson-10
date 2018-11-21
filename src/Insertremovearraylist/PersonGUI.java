@@ -45,8 +45,8 @@ public class PersonGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
         txtage = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        optmale = new javax.swing.JRadioButton();
+        optfemale = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -61,24 +61,29 @@ public class PersonGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lstpeople.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstpeopleMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstpeople);
 
         jLabel1.setText("Name: ");
 
         jLabel2.setText("Age: ");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Male");
-        jRadioButton1.setActionCommand("M");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(optmale);
+        optmale.setText("Male");
+        optmale.setActionCommand("M");
+        optmale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                optmaleActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Female");
-        jRadioButton2.setActionCommand("F");
+        buttonGroup1.add(optfemale);
+        optfemale.setText("Female");
+        optfemale.setActionCommand("F");
 
         jMenu1.setText("File");
 
@@ -171,9 +176,9 @@ public class PersonGUI extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(jRadioButton1)
+                        .addComponent(optmale)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(jRadioButton2)
+                        .addComponent(optfemale)
                         .addGap(22, 22, 22))))
         );
         layout.setVerticalGroup(
@@ -191,8 +196,8 @@ public class PersonGUI extends javax.swing.JFrame {
                             .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)))
+                            .addComponent(optmale)
+                            .addComponent(optfemale)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
@@ -238,9 +243,9 @@ public class PersonGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void optmaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optmaleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_optmaleActionPerformed
 
     private void lst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lst1ActionPerformed
        String name22 = lstpeople.getSelectedValue();
@@ -250,6 +255,18 @@ public class PersonGUI extends javax.swing.JFrame {
        clearForm();
     }//GEN-LAST:event_lst1ActionPerformed
 
+    private void lstpeopleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstpeopleMouseClicked
+        String name = "" + lstpeople.getSelectedValue();
+        int loc = search(people, new Person(name,"",0));
+        show(people.get(loc));
+    }//GEN-LAST:event_lstpeopleMouseClicked
+
+    public void show(Person p){
+        txtname.setText(p.getName());
+        txtage.setText(""+p.getAge());
+        if(p.getGender()=="M") optmale.setSelected(true);
+        else optfemale.setSelected(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -339,11 +356,11 @@ public static int findInsertPoint (ArrayList a, Object searchValue){
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem lst1;
     private javax.swing.JList<String> lstpeople;
+    private javax.swing.JRadioButton optfemale;
+    private javax.swing.JRadioButton optmale;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtname;
     // End of variables declaration//GEN-END:variables

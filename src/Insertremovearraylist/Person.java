@@ -33,6 +33,9 @@ public class Person implements Comparable{
     public String toString() {
         return name;
     }
+    public String getGender(){
+        return gender;
+    }
     
     
 }
