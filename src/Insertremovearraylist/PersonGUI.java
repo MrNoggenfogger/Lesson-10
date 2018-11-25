@@ -87,7 +87,6 @@ public class PersonGUI extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem7.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\exit.png")); // NOI18N
         jMenuItem7.setText("Exit");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +99,6 @@ public class PersonGUI extends javax.swing.JFrame {
 
         jMenu2.setText("Edit");
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\exit.png")); // NOI18N
         jMenuItem4.setText("Clear");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +107,6 @@ public class PersonGUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem4);
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\insert.png")); // NOI18N
         jMenuItem5.setText("Add");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +115,6 @@ public class PersonGUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
-        lst1.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\delete.png")); // NOI18N
         lst1.setText("Delete");
         lst1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +127,6 @@ public class PersonGUI extends javax.swing.JFrame {
 
         jMenu3.setText("Filter");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\all.png")); // NOI18N
         jMenuItem1.setText("Show All");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +135,6 @@ public class PersonGUI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\female.png")); // NOI18N
         jMenuItem2.setText("Female");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,8 +143,12 @@ public class PersonGUI extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("T:\\ISS-ICS4UP-1\\chri8160\\Unit 1 - Review\\Lesson-10-2018\\src\\Insertremovearraylist\\male.png")); // NOI18N
         jMenuItem3.setText("Male");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -206,11 +204,19 @@ public class PersonGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+       list.clear();
+        for (Person p : people) {
+            list.addElement(p.getName());
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        list.clear();
+        for (Person p : people) {
+            if(p.getGender().equals("F")){
+            list.addElement(p.getName());
+            }
+        }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -235,7 +241,7 @@ public class PersonGUI extends javax.swing.JFrame {
         int InsertPoint = findInsertPoint(people, pp);
         if(search(people,pp)==-1){
             people.add(InsertPoint, pp);
-            list.add(InsertPoint, pp);
+            list.add(InsertPoint, name);
         }
         else{
             
@@ -260,6 +266,15 @@ public class PersonGUI extends javax.swing.JFrame {
         int loc = search(people, new Person(name,"",0));
         show(people.get(loc));
     }//GEN-LAST:event_lstpeopleMouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        list.clear();
+        for (Person p : people) {
+            if(p.getGender().equals("M")){
+            list.addElement(p.getName());
+            }
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     public void show(Person p){
         txtname.setText(p.getName());

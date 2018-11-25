@@ -13,9 +13,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\exit.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
@@ -31,9 +28,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\exit.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
               <Events>
@@ -42,9 +36,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\insert.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
               <Events>
@@ -53,9 +44,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="lst1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\delete.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
               <Events>
@@ -71,9 +59,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\all.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Show All"/>
               </Properties>
               <Events>
@@ -82,9 +67,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\female.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Female"/>
               </Properties>
               <Events>
@@ -93,11 +75,11 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="T:\ISS-ICS4UP-1\chri8160\Unit 1 - Review\Lesson-10-2018\src\Insertremovearraylist\male.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Male"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
